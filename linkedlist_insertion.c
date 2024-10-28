@@ -64,57 +64,57 @@ int main(){
         printf("Enter the element to be inserted:-");
         scanf("%d",&val);
         head = insertAtBeginning(head,val);
+    }
+
+    printf("Press 1 for inserting at start of the list\n");
+    printf("Press 2 for inserting in between of the list\n");
+    printf("Press 3 for inserting at the end of the list\n");
+    printf("Enter the choice:-");
+    scanf("%d",&ch);
+
+    if(ch==1){
+        printf("The entered linked list is:-\n");
+        linked_list(head);
+
+        printf("Enter the value to be inserted:-");
+        scanf("%d",&val);
+
+        printf("Inserting element at first:-\n");
+        head = insertAtBeginning(head,val);
+        linked_list(head);
+    }
+
+    else if(ch==2){
+        printf("The entered linked list is:-\n");
+        linked_list(head);
+
+        printf("Enter the position:-");
+        scanf("%d",&l);
+
+        if(l<0 || l>size-1){
+            printf("Please enter a valid location\n");
         }
-
-        printf("Press 1 for inserting at start of the list\n");
-        printf("Press 2 for inserting in between of the list\n");
-        printf("Press 3 for inserting at the end of the list\n");
-        printf("Enter the choice:-");
-        scanf("%d",&ch);
-
-        if(ch==1){
-            printf("The entered linked list is:-\n");
-            linked_list(head);
-
-            printf("Enter the value to be inserted:-");
-            scanf("%d",&val);
-
-            printf("Inserting element at first:-\n");
-            head = insertAtBeginning(head,val);
-            linked_list(head);
-        }
-
-        else if(ch==2){
-            printf("The entered linked list is:-\n");
-            linked_list(head);
-
-            printf("Enter the position:-");
-            scanf("%d",&l);
-
-            if(l<0 || l>size-1){
-                printf("Please enter a valid location\n");
-            }
-            else{
-                printf("Enter the value to be inserted:-\n");
-                scanf("%d",&val);
-
-                printf("after inserting in-between:-\n");
-                insertBetween(head,l,val);
-                linked_list(head);
-            }
-        }
-
-        else if(ch==3){
-            printf("The entered linked list is:-\n");
-            linked_list(head);
-
+        else{
             printf("Enter the value to be inserted:-\n");
             scanf("%d",&val);
 
-            printf("after inserting at end:-\n");
-            insertAtEnd(head,val);
+            printf("after inserting in-between:-\n");
+            insertBetween(head,l,val);
             linked_list(head);
         }
+    }
+
+    else if(ch==3){
+        printf("The entered linked list is:-\n");
+        linked_list(head);
+
+        printf("Enter the value to be inserted:-\n");
+        scanf("%d",&val);
+
+        printf("after inserting at end:-\n");
+        insertAtEnd(head,val);
+        linked_list(head);
+    }
 
     return 0;
 }
